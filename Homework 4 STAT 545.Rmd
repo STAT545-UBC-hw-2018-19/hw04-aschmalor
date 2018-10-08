@@ -2,9 +2,10 @@
 title: "Homework 4 STAT 545"
 author: "Anita"
 date: "October 4, 2018"
-output: 
-  html_document: 
+output:
+  html_document:
     keep_md: yes
+  word_document: default
 ---
 
 #Homework 04: Tidy data and joins
@@ -39,12 +40,13 @@ c <- tribble(
 
 ```{r}
 knitr::kable(c)
+c
 ```
 
 
 Since this data is in long format, it can be used for analyses, such as multilevel modelng where wellbeing is predicted from the Democracy Index with a random intercept for country.
 
-```{r}
+```{r echo=FALSE}
 library(lmerTest)
 a <- lmer(wellbeing ~ Dem_Index + (1|country), c) 
 summary(a)

@@ -2,9 +2,10 @@
 title: "Homework 4 STAT 545"
 author: "Anita"
 date: "October 4, 2018"
-output: 
-  html_document: 
+output:
+  html_document:
     keep_md: yes
+  word_document: default
 ---
 
 #Homework 04: Tidy data and joins
@@ -58,13 +59,28 @@ UK          7           7        8.53
 UK          8           7        8.53
 UK          9           6        8.53
 
+```r
+c
+```
+
+```
+## # A tibble: 9 x 4
+##   country    ID wellbeing Dem_Index
+##   <chr>   <dbl>     <dbl>     <dbl>
+## 1 USA         1         5      7.98
+## 2 USA         2         3      7.98
+## 3 USA         3         6      7.98
+## 4 Canada      4         7      9.15
+## 5 Canada      5         8      9.15
+## 6 Canada      6         6      9.15
+## 7 UK          7         7      8.53
+## 8 UK          8         7      8.53
+## 9 UK          9         6      8.53
+```
+
 
 Since this data is in long format, it can be used for analyses, such as multilevel modelng where wellbeing is predicted from the Democracy Index with a random intercept for country.
 
-
-```r
-library(lmerTest)
-```
 
 ```
 ## Loading required package: lme4
@@ -100,11 +116,6 @@ library(lmerTest)
 ## The following object is masked from 'package:stats':
 ## 
 ##     step
-```
-
-```r
-a <- lmer(wellbeing ~ Dem_Index + (1|country), c) 
-summary(a)
 ```
 
 ```

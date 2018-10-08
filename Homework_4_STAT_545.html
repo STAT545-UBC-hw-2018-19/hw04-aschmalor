@@ -215,8 +215,20 @@ $(document).ready(function () {
 </tr>
 </tbody>
 </table>
+<pre class="r"><code>c</code></pre>
+<pre><code>## # A tibble: 9 x 4
+##   country    ID wellbeing Dem_Index
+##   &lt;chr&gt;   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 USA         1         5      7.98
+## 2 USA         2         3      7.98
+## 3 USA         3         6      7.98
+## 4 Canada      4         7      9.15
+## 5 Canada      5         8      9.15
+## 6 Canada      6         6      9.15
+## 7 UK          7         7      8.53
+## 8 UK          8         7      8.53
+## 9 UK          9         6      8.53</code></pre>
 <p>Since this data is in long format, it can be used for analyses, such as multilevel modelng where wellbeing is predicted from the Democracy Index with a random intercept for country.</p>
-<pre class="r"><code>library(lmerTest)</code></pre>
 <pre><code>## Loading required package: lme4</code></pre>
 <pre><code>## Loading required package: Matrix</code></pre>
 <pre><code>## 
@@ -232,8 +244,6 @@ $(document).ready(function () {
 <pre><code>## The following object is masked from 'package:stats':
 ## 
 ##     step</code></pre>
-<pre class="r"><code>a &lt;- lmer(wellbeing ~ Dem_Index + (1|country), c) 
-summary(a)</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite's method [
 ## lmerModLmerTest]
 ## Formula: wellbeing ~ Dem_Index + (1 | country)
