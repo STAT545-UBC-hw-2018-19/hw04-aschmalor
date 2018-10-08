@@ -37,7 +37,6 @@ c <- tribble(
 
 ```{r}
 knitr::kable(c)
-c
 ```
 
 
